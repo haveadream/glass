@@ -7,7 +7,7 @@ class ModelLocalisationLanguage extends Model {
 	}
 
 	public function getLanguages() {
-		$language_data = $this->cache->get('language');
+		$language_data = $this->cache->get('catalog.getLanguages');
 
 		if (!$language_data) {
 			$language_data = array();
@@ -27,7 +27,7 @@ class ModelLocalisationLanguage extends Model {
 				);
 			}
 
-			$this->cache->set('catalog.language', $language_data);
+			$this->cache->set('catalog.getLanguages', $language_data);
 		}
 
 		return $language_data;
